@@ -14,6 +14,7 @@ import {
   RadioGroup,
   Typography,
 } from "@material-ui/core";
+import SideBar from "./SideBar";
 
 const Quiz = ({ option }) => {
   const [activeQuestion, setActiveQuestion] = useState(0);
@@ -48,7 +49,10 @@ const Quiz = ({ option }) => {
   const onAnswerSelected = (answer, index) => {
     setActiveButton(index);
     setSelectedAnswerIndex(index);
-    if (answer === correctAnswer) {
+    console.log("check",answer.toString());
+    console.log(correctAnswer);
+
+    if (answer.toString() === correctAnswer) {
       setSelectedAnswer(true);
     } else {
       setSelectedAnswer(false);
@@ -81,11 +85,15 @@ setResultShow(true);
   const [value, setValue] = React.useState('female');
 
   const handleChange = (event) => {
+    
     setValue(event.target.value);
   };
   const [resultShow,setResultShow]=useState(false);
+  {<SideBar setResultShow={setResultShow}/>}
   return (
-    <>{!resultShow?(
+    
+    <>
+    {!resultShow?(
     <div style={{ paddingTop: "100px" }}>
       <Card variant="outlined" style={{maxWidth:"1000px"}}>
         <CardContent>
@@ -102,13 +110,15 @@ setResultShow(true);
           <Typography style={{ paddingTop: "50px", fontWeight:"bold",fontSize:"17px" }}>{question}</Typography>
           <ul>
             {choices.map((answer, index) => (
+              // data.map(item => Object.values(item))
               <>
+              
               <Grid xs={12}>
              
               <FormControl component="fieldset">
       
-      <RadioGroup aria-label="gender" name={index} value={value} onChange={handleChange}>
-        <FormControlLabel value={answer}control={<Radio />} onClick={() => onAnswerSelected(answer, index)} label={answer}/>
+      <RadioGroup aria-label="Answers"  value={value} onChange={handleChange}>
+        <FormControlLabel value={Object.values(answer)[0]}control={<Radio />} onClick={() => onAnswerSelected(Object.keys(answer), index)} label={Object.values(answer)}/>
         
       </RadioGroup>
     </FormControl>
@@ -147,16 +157,15 @@ setResultShow(true);
      
     </div>
     ):(
-      <Dialog
+      <Box
       open={open}
       onClose={handleClose}
-      aria-labelledby="alert-dialog-title"
-      aria-describedby="alert-dialog-description"
+      style={{padding:"150px 100px 0px 150px"}}
       
       
     >
-      <DialogContent >
-        <DialogContentText id="alert-dialog-description">
+      
+        
           <Box style={{backgroundColor:"#ef5350",width:"300px",borderRadius:"15px",marginBottom:"20px"}}><h3 style={{fontWeight:"bold",color:"white",padding:"15px 15px 15px 115px"}}>Result</h3></Box>
           <Box style={{backgroundColor:"#005D7E",width:"300px",borderRadius:"15px",marginBottom:"20px"}}>
             <Typography style={{color:"white",padding:"15px 15px 15px 75px"}}>Total Question: <span>{questions.length}</span></Typography>
@@ -171,9 +180,9 @@ setResultShow(true);
           <Box style={{backgroundColor:"#005D7E",width:"300px",borderRadius:"15px",marginBottom:"20px"}}>
           <Typography style={{color:"white",padding:"15px 15px 15px 75px"}}>Wrong Answers:<span> {result.wrongAnswers}</span></Typography>
           </Box>
-        </DialogContentText>
-      </DialogContent>
-    </Dialog>
+       
+     
+    </Box>
 
     )}
     </>

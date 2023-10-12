@@ -9,6 +9,7 @@ import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import Main from "../pages/furlongCourses/Main.js";
+import Quiz from "./Quiz.js";
 
 const Accordion = withStyles({
   root: {
@@ -50,7 +51,7 @@ const AccordionDetails = withStyles((theme) => ({
     padding: theme.spacing(2),
   },
 }))(MuiAccordionDetails);
-export default function SideBar({ handleOption }) {
+export default function SideBar({ handleOption}) {
   // console.log(handleOption);
   const [color, setColor] = React.useState('Conditions of Engagement');
   const [expanded, setExpanded] = React.useState('Module 1 - Human Resources');
@@ -63,10 +64,11 @@ export default function SideBar({ handleOption }) {
 
   const handleSideBarClick = (option) => {
     handleOption(option);
-    // console.log(option);
+    console.log("kkkk",option);
       setColor(option.name);
 
   };
+  // const question = resData[0].children[0].quiz.questions[0].question;
 
   return (
     <div>
@@ -86,10 +88,11 @@ export default function SideBar({ handleOption }) {
                 <Grid>
                   {data.children.map((option, i) => {
                     // console.log(i);
-                    <Main initial={option.name} content={option.url}/>
+                    
+                    <Quiz option={option} initial={option.name} content={option.url}/>
                     return (
                       <>
-                      {/* <Main option={option}/> */}
+                      {/* <Quiz option={option}/> */}
                         <li
                           className="pointer"
                           style={{
@@ -113,7 +116,7 @@ export default function SideBar({ handleOption }) {
                               display: "inline-block",
                               width: "70%",
                             }}
-                            onClick={() => {handleSideBarClick(option);}}
+                            onClick={() => {handleSideBarClick(option)}}
                           >
                             {option.name}
                             

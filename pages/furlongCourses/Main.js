@@ -14,53 +14,18 @@ import {
   Drawer,
   Hidden,
   Toolbar,
-  
 } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import Quiz from "../../module 1/Quiz";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const drawerWidth = 280;
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex",
-  },
-  drawer: {
-    [theme.breakpoints.up("sm")]: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
-  },
-  appBar: {
-    [theme.breakpoints.up("sm")]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-    },
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.up("sm")]: {
-      display: "none",
-    },
-  },
-
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-  },
-}));
-
-
 export default function Main(props) {
-
-
   const { window } = props;
-  const classes = useStyles();
+
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -70,7 +35,7 @@ export default function Main(props) {
 
   const [option, setOption] = React.useState({
     name: "Conditions of Engagement",
-    url: "https://writer.zohopublic.com/writer/published/0byhd02a3dd33a12e46098c2004068c6c917b?mode=embed",
+    url: "https://docs.google.com/document/d/e/2PACX-1vRlLLQ_cxYPe5ysNkaeJr8EMb-UcN84_RLcL-_3NFzoAp6i9fUxcR-ZBr2ycxISTY4G-inck1-ZZ3J5/pub?embedded=true",
   });
   const [data, setData] = React.useState(null);
 
@@ -85,16 +50,28 @@ export default function Main(props) {
   const handleOption = (data) => {
     setOption(data);
     setData(data.url);
-
   };
+ 
+  const sm = useMediaQuery(theme.breakpoints.up("sm"));
+  
 
+ 
   return (
-    <div className={classes.root}>
+    <div style={{ display: "flex" }}>
       <CssBaseline />
       <AppBar
         position="fixed"
-        className={classes.appBar}
-        style={{ backgroundColor: "#106786" }}
+        style={{
+          backgroundColor: "#106786",
+
+          width: {
+            sm: `calc(100% - ${drawerWidth}px)`,
+          },
+
+          width: sm ? `calc(100% - ${drawerWidth}px)` : "100%" 
+
+         
+        }}
       >
         <Toolbar>
           <IconButton
@@ -102,7 +79,12 @@ export default function Main(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            className={classes.menuButton}
+            style={{
+              
+              marginRight: theme.spacing(2),
+              display:sm?"none":true
+              
+            }}
           >
             <MenuIcon style={{ color: "white" }} />
           </IconButton>
@@ -118,7 +100,10 @@ export default function Main(props) {
           </Box>
         </Toolbar>
       </AppBar>
-      <nav className={classes.drawer} aria-label="mailbox folders">
+      <nav
+        
+        aria-label="mailbox folders"
+      >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden smUp implementation="css">
           {/* This drawer is for mobile responsive version */}
@@ -128,15 +113,11 @@ export default function Main(props) {
             anchor={theme.direction === "rtl" ? "right" : "left"}
             open={mobileOpen}
             onClose={handleDrawerToggle}
-            classes={{
-              paper: classes.drawerPaper,
-            }}
             ModalProps={{
               keepMounted: true, // Better open performance on mobile.
             }}
-            style={{ width: drawerWidth }} 
           >
-            <div>
+            <div style={{ width: "280px" }}>
               <Image height={59} src={pic} alt="" />
               <Divider />
               <div />
@@ -146,15 +127,8 @@ export default function Main(props) {
           </Drawer>
         </Hidden>
         <Hidden xsDown implementation="css">
-          <Drawer
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            variant="permanent"
-            open
-            style={{ width: drawerWidth }} 
-          >
-            <div>
+          <Drawer style={{ width: drawerWidth }} variant="permanent" open>
+            <div style={{ width: "280px" }}>
               <Image height={59} src={pic} alt="" />
               <Divider />
               <div />
@@ -163,9 +137,7 @@ export default function Main(props) {
           </Drawer>
         </Hidden>
       </nav>
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-
+      <main style={{ flexGrow: 1, padding: theme.spacing(3) }}>
         {option?.url ? (
           <div
             style={{ width: "100%", overflow: "hidden", paddingTop: "56.25%" }}
@@ -218,7 +190,7 @@ export default function Main(props) {
               frameborder="0"
               scrolling="yes"
               src={
-                "https://writer.zohopublic.com/writer/published/0byhd02a3dd33a12e46098c2004068c6c917b?mode=embed"
+                "https://docs.google.com/document/d/e/2PACX-1vRlLLQ_cxYPe5ysNkaeJr8EMb-UcN84_RLcL-_3NFzoAp6i9fUxcR-ZBr2ycxISTY4G-inck1-ZZ3J5/pub?embedded=true"
               }
             ></iframe>
           </div>
@@ -227,6 +199,4 @@ export default function Main(props) {
     </div>
   );
 }
-Main.propTypes = {
-  window: PropTypes.func,
-};
+

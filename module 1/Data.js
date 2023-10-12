@@ -45,23 +45,23 @@ const resData = [
       },
       {
         name: "Furlong Painting SUB Contractor / Worker Induction",
-        url: "https://writer.zohopublic.com/writer/published/0byhd6d806473ebe1408d95e295034c0e4bc7?mode=embed",
+        url: "https://docs.google.com/document/d/e/2PACX-1vSa9expFvH7Bg1eMV7iecoi0bDqsxDfHJqps1elvzeWmXvFywsxjjbThh588TzYofRPA7ID1VkkZrqa/pub?embedded=true",
       },
       {
         name: "Furlong Painting - History & Mission",
-        url: "https://writer.zohopublic.com/writer/published/0byhd6d806473ebe1408d95e295034c0e4bc7?mode=embed",
+        url: "https://docs.google.com/document/d/e/2PACX-1vRUdaTAk4Yya6oJK2grlZ7senZp_q4FlJb9vO9frfV_ji6jgYxOrQUWOBprw2Tt8qNDZr2E3kGTIiFF/pub?embedded=true",
       },
       {
         name: "Interpretative Statements",
-        url: "https://writer.zohopublic.com/writer/published/0byhd6d806473ebe1408d95e295034c0e4bc7?mode=embed",
+        url: "https://docs.google.com/document/d/e/2PACX-1vQcUegOYq5KrgXLzuqVGbuRwGboY2B70Pi62MvgE4DJtgfnWOj1n1E7maAZdZiGy7McWzo-70spk08-/pub?embedded=true",
       },
       {
         name: "Contractor Expectations and Responsibilities",
-        url: "https://writer.zohopublic.com/writer/published/0byhd6d806473ebe1408d95e295034c0e4bc7?mode=embed",
+        url: "https://docs.google.com/document/d/e/2PACX-1vTrpnrgEiv-xq3jWsTVHWhGLhAXzynqXRkWyDF7KYSstE76X-bDZzX3aMqQj4R6Ilicbs348P9sqaYf/pub?embedded=true",
       },
       {
         name: "Personal and Business Documentation",
-        url: "https://writer.zohopublic.com/writer/published/0byhd6d806473ebe1408d95e295034c0e4bc7?mode=embed",
+        url: "https://docs.google.com/document/d/e/2PACX-1vTgN4EPLkXVZ_Eh5NgSD6bBv2x9q0GcRQrrOJmLfI5duG9g9eUrtjOqB1NZ0fS7N6Z4bC92nNjjm5NF/pub?embedded=true",
       },
       {
         name: "QUIZ - Module 1",
@@ -72,82 +72,80 @@ const resData = [
             {
               question:
                 "Do you fully understand and are prepared to abide by the Contractors Conditions of Engagement?",
-              choices: ["Yes", "No"],
-              correctAnswer: "Yes",
+              choices: [{A:"Yes"},
+               {B:"No"}],
+              correctAnswer: "A",
               questionNumber: 1,
             },
             {
               question:
                 "Who is responsible for complying with the Contractor Code of Conduct?",
               choices: [
-                "All persons performing work on behalf of Furlong Painting",
-                "Only Furlong Painting Employees",
-                "Only Furlong Painting Contractors",
+                {A:"All persons performing work on behalf of Furlong Painting"},
+                {B:"Only Furlong Painting Employees"},
+                {C:"Only Furlong Painting Contractors"},
               ],
               correctAnswer:
-                "All persons performing work on behalf of Furlong Painting",
+                "A",
               questionNumber: 2,
             },
             {
               question:
                 "The Occupational Health and Safety Act requires Employers to provide a safe workplace. Each contractor and their employees / sub contractors are required to....",
               choices: [
-                "Follow only the client's safety processes",
-                "Make sure someone on site is fit to perform nominated duties.",
-                "Ensure compliance with both legislative requirements and Furlong Painting risk management policies/procedures.",
+                {A:"Follow only the client's safety processes"},
+                {B:"Make sure someone on site is fit to perform nominated duties."},
+                {C:"Ensure compliance with both legislative requirements and Furlong Painting risk management policies/procedures."},
               ],
               correctAnswer:
-                "Ensure compliance with both legislative requirements and Furlong Painting risk management policies/procedures.",
+                "C",
               questionNumber: 3,
             },
             {
               question:
                 "What is the expected criteria for workplace presentation?",
               choices: [
-                "Workwear to be clean and, where possible, bearing the Furlong painting logo",
-                "Contractors to be well rested and not under the influence of a substance that might impair the ability to perform required tasks safely",
-                "That all electrical equipment to be have a valid test and tag",
-                "All of the above",
+                {A:"Workwear to be clean and, where possible, bearing the Furlong painting logo"},
+                {B:"Contractors to be well rested and not under the influence of a substance that might impair the ability to perform required tasks safely"},
+                {C:"That all electrical equipment to be have a valid test and tag"},
+                {D:"All of the above"},
               ],
-              correctAnswer: "All of the above",
+              correctAnswer: "D",
               questionNumber: 4,
             },
             {
               question: "What is deemed to be workplace bullying?",
               choices: [
-                "When more than two people agree that comments are inappropriate",
-                "Repeated and unwanted negative behaviour, relating to gender, sexuality, cultural background etc",
-                "Where Furlong Painting stops offering my business work opportunities",
+                {A:"When more than two people agree that comments are inappropriate"},
+                {B:"Repeated and unwanted negative behaviour, relating to gender, sexuality, cultural background etc"},
+                {C:"Where Furlong Painting stops offering my business work opportunities"},
               ],
               correctAnswer:
-                "Repeated and unwanted negative behaviour, relating to gender, sexuality, cultural background etc",
+                "B",
               questionNumber: 5,
             },
             {
               question:
                 "What best describes why Workplace Fatigue Management is an important part of the Risk Management Program?",
               choices: [
-                "It may affect safety in the workplace",
-                ,
-                "It highlights the signs and symptoms of fatigue which helps to minimise the risks associated in the workplace",
-                "It gives me an excuse to sleep in every day",
-
-                ,
+                {A:"It may affect safety in the workplace"},
+                {B:"It highlights the signs and symptoms of fatigue which helps to minimise the risks associated in the workplace"},
+                {C:"It gives me an excuse to sleep in every day"},
               ],
               correctAnswer:
-                "It highlights the signs and symptoms of fatigue which helps to minimise the risks associated in the workplace",
+                "B",
               questionNumber: 6,
             },
             {
               question:
                 "Which of the following MUST be reported immediately to company management?",
               choices: [
-                "An injury",
-                "Property Damage",
-                "All incidents – injury, near miss, hazard reporting, environmental issue, property damage / loss.",
+                {A:"An injury"},
+                {B:"Property Damage"},
+                {C:"All incidents – injury, near miss, hazard reporting, environmental issue, property damage / loss."},
               ],
               correctAnswer:
-                "All incidents – injury, near miss, hazard reporting, environmental issue, property damage / loss.",
+                "C",
               questionNumber: 7,
             },
           ],
@@ -208,105 +206,105 @@ const resData = [
               question:
                 "What best describes the reason for creating and amending Safe Work Method Statements?",
               choices: [
-                "To describe the job to be completed",
-                "To identify, address and minimise any safety risks on site",
-                "To keep all workers up to date on changes on the site",
+                {A:"To describe the job to be completed"},
+                {B:"To identify, address and minimise any safety risks on site"},
+                {C:"To keep all workers up to date on changes on the site"},
               ],
               correctAnswer:
-                "To identify, address and minimise any safety risks on site",
+                "B",
               questionNumber: 1,
             },
             {
               question:
                 "When should you STOP work for workplace safety reasons?",
               choices: [
-                "You dislike the tasks that have been assigned to you.",
-                "If you believe your personal health and safety could be compromised by performing the tasks in the current workplace condition.",
-                "Work is not being evenly distributed amongst the team",
+                {A:"You dislike the tasks that have been assigned to you."},
+                {B:"If you believe your personal health and safety could be compromised by performing the tasks in the current workplace condition."},
+                {C:"Work is not being evenly distributed amongst the team"},
               ],
               correctAnswer:
-                "If you believe your personal health and safety could be compromised by performing the tasks in the current workplace condition.",
+                "B",
               questionNumber: 2,
             },
             {
               question: "When must I wear Personal Protective Equipment (PPE)?",
               choices: [
-                "At all times for Australian Standard Safety footwear and other PPE as appropriate when safety hazards have been identified",
-                "Only when you believe WorkSafe or Furlong Painting management may be attending the workplace.",
-                "Never",
+                {A:"At all times for Australian Standard Safety footwear and other PPE as appropriate when safety hazards have been identified"},
+                {B:"Only when you believe WorkSafe or Furlong Painting management may be attending the workplace."},
+                {C:"Never"},
               ],
               correctAnswer:
-                "At all times for Australian Standard Safety footwear and other PPE as appropriate when safety hazards have been identified",
+                "A",
               questionNumber: 3,
             },
             {
               question:
                 "All manual handling tasks need to be performed with care and full consideration of the control solutions recommended on the Safe Work Method Statement. Which statement best describes 'high risk manual handling tasks'?",
               choices: [
-                "General painting tasks performed by contractors",
-                "Carrying of paint tins",
-                "Where force is used to push, pull and lift including the loading and unloading vehicle, setting up work area, preparation of work surfaces, generic painting tasks and cleaning up when the job is completed",
+                {A:"General painting tasks performed by contractors"},
+                {B:"Carrying of paint tins"},
+                {C:"Where force is used to push, pull and lift including the loading and unloading vehicle, setting up work area, preparation of work surfaces, generic painting tasks and cleaning up when the job is completed"},
               ],
               correctAnswer:
-                "Where force is used to push, pull and lift including the loading and unloading vehicle, setting up work area, preparation of work surfaces, generic painting tasks and cleaning up when the job is completed",
+                "C",
               questionNumber: 4,
             },
             {
               question:
                 "Above which working height is a fall arrest system required?",
-              choices: ["1.5 m", "2.0 m", "2.5 m"],
-              correctAnswer: "2.0 m",
+              choices: [
+                {A:"1.5 m"},
+               {B:"2.0 m"}, 
+               {C:"2.5 m"}],
+              correctAnswer: "B",
               questionNumber: 5,
             },
             {
               question:
                 "Which statement best describes the contractor's Electrical Safety obligations?",
               choices: [
-                "Contractors must have a clear understanding of the Furlong Painting Electrical Procedure and ensure that all electrical plant and equipment is in good operational order and has a current valid test and tag attached prior to bringing on site",
-                ,
-                "Contractors must ensure valid test and tag is attached to all electrical equipment prior to using on site.",
-                "Only use electrical equipment specified on the Safe Work Method Statement.",
-
-                ,
+                {A:"Contractors must have a clear understanding of the Furlong Painting Electrical Procedure and ensure that all electrical plant and equipment is in good operational order and has a current valid test and tag attached prior to bringing on site"},
+                {B:"Contractors must ensure valid test and tag is attached to all electrical equipment prior to using on site."},
+                {C:"Only use electrical equipment specified on the Safe Work Method Statement."},
               ],
               correctAnswer:
-                "Contractors must have a clear understanding of the Furlong Painting Electrical Procedure and ensure that all electrical plant and equipment is in good operational order and has a current valid test and tag attached prior to bringing on site",
+                "A",
               questionNumber: 6,
             },
             {
               question:
                 "What is the Furlong Painting policy for working in confined spaces?",
               choices: [
-                "Only upon special request from the Client.",
-                "If agreed by the Client and the Contractor after updating the Safe Work Method Statement",
-                "Furlong Painting DOES NOT perform work in any Confined Space, due to the potential risk to the health of contractors",
+                {A:"Only upon special request from the Client."},
+                {B:"If agreed by the Client and the Contractor after updating the Safe Work Method Statement"},
+                {C:"Furlong Painting DOES NOT perform work in any Confined Space, due to the potential risk to the health of contractors"},
               ],
               correctAnswer:
-                "Furlong Painting DOES NOT perform work in any Confined Space, due to the potential risk to the health of contractors",
+                "C",
               questionNumber: 7,
             },
             {
               question:
                 "Which of the following reasons best describes why should you maintain your work area in a safe manner?",
               choices: [
-                "To ensure I know where all of my work items area",
-                "To ensure good relations with the client representative",
-                "To minimise the risk of workplace slips, trips and falls and the potential injury that may result",
+                {A:"To ensure I know where all of my work items area"},
+                {B:"To ensure good relations with the client representative"},
+                {C:"To minimise the risk of workplace slips, trips and falls and the potential injury that may result"},
               ],
               correctAnswer:
-                "To minimise the risk of workplace slips, trips and falls and the potential injury that may result",
+                "C",
               questionNumber: 8,
             },
             {
               question:
                 "Which response accurately describes Driver Fatigue symptoms",
               choices: [
-                "Falling asleep at the wheel.",
-                "Difficulty staying focused on the road.",
-                "Random changes in vehicle speed.",
-                "All of the above.",
+                {A:"Falling asleep at the wheel."},
+                {B:"Difficulty staying focused on the road."},
+                {C:"Random changes in vehicle speed."},
+                {D:"All of the above."},
               ],
-              correctAnswer: "All of the above.",
+              correctAnswer: "D",
               questionNumber: 9,
             },
           ],
@@ -338,82 +336,80 @@ const resData = [
             {
               question:
                 "Do you fully understand and are prepared to abide by the Contractors Conditions of Engagement?",
-              choices: ["Yes", "No"],
-              correctAnswer: "Yes",
+              choices: [{A:"Yes"},
+               {B:"No"}],
+              correctAnswer: "A",
               questionNumber: 1,
             },
             {
               question:
                 "Who is responsible for complying with the Contractor Code of Conduct?",
               choices: [
-                "All persons performing work on behalf of Furlong Painting",
-                "Only Furlong Painting Employees",
-                "Only Furlong Painting Contractors",
+                {A:"All persons performing work on behalf of Furlong Painting"},
+                {B:"Only Furlong Painting Employees"},
+                {C:"Only Furlong Painting Contractors"},
               ],
               correctAnswer:
-                "All persons performing work on behalf of Furlong Painting",
+                "A",
               questionNumber: 2,
             },
             {
               question:
                 "The Occupational Health and Safety Act requires Employers to provide a safe workplace. Each contractor and their employees / sub contractors are required to....",
               choices: [
-                "Follow only the client's safety processes",
-                "Make sure someone on site is fit to perform nominated duties.",
-                "Ensure compliance with both legislative requirements and Furlong Painting risk management policies/procedures.",
+                {A:"Follow only the client's safety processes"},
+                {B:"Make sure someone on site is fit to perform nominated duties."},
+                {C:"Ensure compliance with both legislative requirements and Furlong Painting risk management policies/procedures."},
               ],
               correctAnswer:
-                "Ensure compliance with both legislative requirements and Furlong Painting risk management policies/procedures.",
+                "C",
               questionNumber: 3,
             },
             {
               question:
                 "What is the expected criteria for workplace presentation?",
               choices: [
-                "Workwear to be clean and, where possible, bearing the Furlong painting logo",
-                "Contractors to be well rested and not under the influence of a substance that might impair the ability to perform required tasks safely",
-                "That all electrical equipment to be have a valid test and tag",
-                "All of the above",
+                {A:"Workwear to be clean and, where possible, bearing the Furlong painting logo"},
+                {B:"Contractors to be well rested and not under the influence of a substance that might impair the ability to perform required tasks safely"},
+                {C:"That all electrical equipment to be have a valid test and tag"},
+                {D:"All of the above"},
               ],
-              correctAnswer: "All of the above",
+              correctAnswer: "D",
               questionNumber: 4,
             },
             {
               question: "What is deemed to be workplace bullying?",
               choices: [
-                "When more than two people agree that comments are inappropriate",
-                "Repeated and unwanted negative behaviour, relating to gender, sexuality, cultural background etc",
-                "Where Furlong Painting stops offering my business work opportunities",
+                {A:"When more than two people agree that comments are inappropriate"},
+                {B:"Repeated and unwanted negative behaviour, relating to gender, sexuality, cultural background etc"},
+                {C:"Where Furlong Painting stops offering my business work opportunities"},
               ],
               correctAnswer:
-                "Repeated and unwanted negative behaviour, relating to gender, sexuality, cultural background etc",
+                "B",
               questionNumber: 5,
             },
             {
               question:
                 "What best describes why Workplace Fatigue Management is an important part of the Risk Management Program?",
               choices: [
-                "It may affect safety in the workplace",
-                ,
-                "It highlights the signs and symptoms of fatigue which helps to minimise the risks associated in the workplace",
-                "It gives me an excuse to sleep in every day",
-
-                ,
+                {A:"It may affect safety in the workplace"},
+                {B:"It highlights the signs and symptoms of fatigue which helps to minimise the risks associated in the workplace"},
+                {C:"It gives me an excuse to sleep in every day"},
               ],
               correctAnswer:
-                "It highlights the signs and symptoms of fatigue which helps to minimise the risks associated in the workplace",
+                "B",
               questionNumber: 6,
             },
             {
               question:
                 "Which of the following MUST be reported immediately to company management?",
               choices: [
-                "An injury",
-                "Property Damage",
-                "All incidents – injury, near miss, hazard reporting, environmental issue, property damage / loss.",
+                {A:"An injury"},
+                {B:"Property Damage"},
+                {C:"All incidents – injury, near miss, hazard reporting, environmental issue, property damage / loss."},
               ],
               correctAnswer:
-                "All incidents – injury, near miss, hazard reporting, environmental issue, property damage / loss.",
+                "C",
               questionNumber: 7,
             },
           ],
@@ -441,82 +437,80 @@ const resData = [
             {
               question:
                 "Do you fully understand and are prepared to abide by the Contractors Conditions of Engagement?",
-              choices: ["Yes", "No"],
-              correctAnswer: "Yes",
+              choices: [{A:"Yes"},
+               {B:"No"}],
+              correctAnswer: "A",
               questionNumber: 1,
             },
             {
               question:
                 "Who is responsible for complying with the Contractor Code of Conduct?",
               choices: [
-                "All persons performing work on behalf of Furlong Painting",
-                "Only Furlong Painting Employees",
-                "Only Furlong Painting Contractors",
+                {A:"All persons performing work on behalf of Furlong Painting"},
+                {B:"Only Furlong Painting Employees"},
+                {C:"Only Furlong Painting Contractors"},
               ],
               correctAnswer:
-                "All persons performing work on behalf of Furlong Painting",
+                "A",
               questionNumber: 2,
             },
             {
               question:
                 "The Occupational Health and Safety Act requires Employers to provide a safe workplace. Each contractor and their employees / sub contractors are required to....",
               choices: [
-                "Follow only the client's safety processes",
-                "Make sure someone on site is fit to perform nominated duties.",
-                "Ensure compliance with both legislative requirements and Furlong Painting risk management policies/procedures.",
+                {A:"Follow only the client's safety processes"},
+                {B:"Make sure someone on site is fit to perform nominated duties."},
+                {C:"Ensure compliance with both legislative requirements and Furlong Painting risk management policies/procedures."},
               ],
               correctAnswer:
-                "Ensure compliance with both legislative requirements and Furlong Painting risk management policies/procedures.",
+                "C",
               questionNumber: 3,
             },
             {
               question:
                 "What is the expected criteria for workplace presentation?",
               choices: [
-                "Workwear to be clean and, where possible, bearing the Furlong painting logo",
-                "Contractors to be well rested and not under the influence of a substance that might impair the ability to perform required tasks safely",
-                "That all electrical equipment to be have a valid test and tag",
-                "All of the above",
+                {A:"Workwear to be clean and, where possible, bearing the Furlong painting logo"},
+                {B:"Contractors to be well rested and not under the influence of a substance that might impair the ability to perform required tasks safely"},
+                {C:"That all electrical equipment to be have a valid test and tag"},
+                {D:"All of the above"},
               ],
-              correctAnswer: "All of the above",
+              correctAnswer: "D",
               questionNumber: 4,
             },
             {
               question: "What is deemed to be workplace bullying?",
               choices: [
-                "When more than two people agree that comments are inappropriate",
-                "Repeated and unwanted negative behaviour, relating to gender, sexuality, cultural background etc",
-                "Where Furlong Painting stops offering my business work opportunities",
+                {A:"When more than two people agree that comments are inappropriate"},
+                {B:"Repeated and unwanted negative behaviour, relating to gender, sexuality, cultural background etc"},
+                {C:"Where Furlong Painting stops offering my business work opportunities"},
               ],
               correctAnswer:
-                "Repeated and unwanted negative behaviour, relating to gender, sexuality, cultural background etc",
+                "B",
               questionNumber: 5,
             },
             {
               question:
                 "What best describes why Workplace Fatigue Management is an important part of the Risk Management Program?",
               choices: [
-                "It may affect safety in the workplace",
-                ,
-                "It highlights the signs and symptoms of fatigue which helps to minimise the risks associated in the workplace",
-                "It gives me an excuse to sleep in every day",
-
-                ,
+                {A:"It may affect safety in the workplace"},
+                {B:"It highlights the signs and symptoms of fatigue which helps to minimise the risks associated in the workplace"},
+                {C:"It gives me an excuse to sleep in every day"},
               ],
               correctAnswer:
-                "It highlights the signs and symptoms of fatigue which helps to minimise the risks associated in the workplace",
+                "B",
               questionNumber: 6,
             },
             {
               question:
                 "Which of the following MUST be reported immediately to company management?",
               choices: [
-                "An injury",
-                "Property Damage",
-                "All incidents – injury, near miss, hazard reporting, environmental issue, property damage / loss.",
+                {A:"An injury"},
+                {B:"Property Damage"},
+                {C:"All incidents – injury, near miss, hazard reporting, environmental issue, property damage / loss."},
               ],
               correctAnswer:
-                "All incidents – injury, near miss, hazard reporting, environmental issue, property damage / loss.",
+                "C",
               questionNumber: 7,
             },
           ],
