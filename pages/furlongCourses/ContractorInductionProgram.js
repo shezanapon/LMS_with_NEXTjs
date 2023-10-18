@@ -48,10 +48,10 @@ export default function Main(props) {
     setIsLoading(false);
   };
 
-  const handleOption = (data) => {
-    setOption(data);
-    setData(data.url);
-  };
+  // const handleOption = (data) => {
+  //   setOption(data);
+  //   setData(data.url);
+  // };
  
   const sm = useMediaQuery(theme.breakpoints.up("sm"));
   
@@ -92,7 +92,7 @@ export default function Main(props) {
 
           <Box
             variant="h6"
-            noWrap
+           
             style={{
               color: "white",
             }}
@@ -123,7 +123,7 @@ export default function Main(props) {
               <Divider />
               <div />
 
-              <SideBar handleOption={handleOption} />
+              <SideBarForContractor setOption={setOption} />
             </div>
           </Drawer>
         </Hidden>
@@ -133,7 +133,7 @@ export default function Main(props) {
               <Image height={59} src={pic} alt="" />
               <Divider />
               <div />
-              <SideBarForContractor handleOption={handleOption} />
+              <SideBarForContractor setOption={setOption}/>
             </div>
           </Drawer>
         </Hidden>
@@ -160,7 +160,7 @@ export default function Main(props) {
                 border: "none",
               }}
               onLoad={handleIframeLoad}
-              frameborder="0"
+              
               scrolling="yes"
               src={option?.url}
             ></iframe>
@@ -188,7 +188,7 @@ export default function Main(props) {
                 border: "none",
               }}
               onLoad={handleIframeLoad}
-              frameborder="0"
+              
               scrolling="yes"
               src={
                 "https://docs.google.com/document/d/e/2PACX-1vRlLLQ_cxYPe5ysNkaeJr8EMb-UcN84_RLcL-_3NFzoAp6i9fUxcR-ZBr2ycxISTY4G-inck1-ZZ3J5/pub?embedded=true"

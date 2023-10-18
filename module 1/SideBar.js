@@ -2,136 +2,84 @@ import * as React from "react";
 import DescriptionIcon from "@material-ui/icons/Description";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import resData from "./Data.js";
-import Grid from "@material-ui/core/Grid";
-import { withStyles } from '@material-ui/core/styles';
-import MuiAccordion from '@material-ui/core/Accordion';
-import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
-import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
-import Typography from '@material-ui/core/Typography';
-import Main from "../pages/furlongCourses/Main.js";
-import Quiz from "./Quiz.js";
+import Typography from "@material-ui/core/Typography";
+import { Accordion, AccordionDetails, AccordionSummary, Box } from "@material-ui/core";
 
-const Accordion = withStyles({
-  root: {
-    border: '1px solid rgba(0, 0, 0, .125)',
-    boxShadow: 'none',
-    '&:not(:last-child)': {
-      borderBottom: 0,
-    },
-    '&:before': {
-      display: 'none',
-    },
-    '&$expanded': {
-      margin: 'auto',
-    },
-  },
-  expanded: {},
-})(MuiAccordion);
 
-const AccordionSummary = withStyles({
-  root: {
-    backgroundColor: 'rgba(0, 0, 0, .03)',
-    borderBottom: '1px solid rgba(0, 0, 0, .125)',
-    marginBottom: -1,
-    minHeight: 56,
-    '&$expanded': {
-      minHeight: 56,
-    },
-  },
-  content: {
-    '&$expanded': {
-      margin: '12px 0',
-    },
-  },
-  expanded: {},
-})(MuiAccordionSummary);
-
-const AccordionDetails = withStyles((theme) => ({
-  root: {
-    padding: theme.spacing(2),
-  },
-}))(MuiAccordionDetails);
-export default function SideBar({ handleOption}) {
-  // console.log(handleOption);
-  const [color, setColor] = React.useState('Conditions of Engagement');
-  const [expanded, setExpanded] = React.useState('Module 1 - Human Resources');
+export default function SideBar({ setOption }) {
+  const [color, setColor] = React.useState("Conditions of Engagement");
+  const [expanded, setExpanded] = React.useState("Module 1 - Human Resources");
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
-  const handleChangeExpanded = (panel) => (event, newExpanded) => {
-    setExpanded(newExpanded ? panel : false);
-  };
 
-  const handleSideBarClick = (option) => {
-    handleOption(option);
-    console.log("kkkk",option);
-      setColor(option.name);
+  const handleSideBarClick = async (option) => {
+    await setOption(option);
+    setColor(option?.name);
 
   };
-  // const question = resData[0].children[0].quiz.questions[0].question;
 
   return (
     <div>
-      {resData.map((data,i) => {
-        // console.log(i);
+      {resData.map((data, i) => {
         return (
           <>
-            <Accordion
-          square  expanded={expanded === data.accordion} onChange={handleChange(data.accordion)}
-            >
-              <AccordionSummary>
-                <Typography style={{ fontWeight: "bold" }}>
-                  {data.accordion}
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Grid>
-                  {data.children.map((option, i) => {
-                    // console.log(i);
-                    
-                    <Quiz option={option} initial={option.name} content={option.url}/>
-                    return (
-                      <>
-                      {/* <Quiz option={option}/> */}
-                        <li
-                          className="pointer"
-                          style={{
-                            display: "flex",
-                            marginBottom: "14px",
-                            fontSize: "16px",
-                            backgroundColor:
-                              color === option.name ? "#106786" : "#fff",
-                            color: color === option.name ? "#fff" : "#000",
-                            
-                            
-                          }}
-                        >
-                          <DescriptionIcon />
-
-                          <Typography
+            <div key={i}>
+              <Accordion
+                square
+                expanded={expanded === data?.accordion}
+                onChange={handleChange(data?.accordion)}
+              >
+                <AccordionSummary>
+                  <Typography style={{ fontWeight: "bold" }}>
+                    {data?.accordion}
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <div>
+                    {data?.children?.map((option, index) => {
+                      return (
+                        <>
+                          <li
+                            key={index}
+                            className="pointer"
                             style={{
-                              marginLeft: ".5rem",
-                              marginTop: 0,
-                              marginBottom: 0,
-                              display: "inline-block",
-                              width: "70%",
+                              display: "flex",
+                              marginBottom: "14px",
+                              fontSize: "16px",
+                              backgroundColor:
+                                color === option.name ? "#106786" : "#fff",
+                              color: color === option.name ? "#fff" : "#000",
                             }}
-                            onClick={() => {handleSideBarClick(option)}}
                           >
-                            {option.name}
-                            
-                          </Typography>
-                          <MoreVertIcon sx={{ ml: "auto" }} />
-                        </li>
-                      </>
-                    );
-                  })}
-                </Grid>
-              </AccordionDetails>
-            </Accordion>
+                            <DescriptionIcon />
+                            <Typography
+                              style={{
+                                marginLeft: ".5rem",
+                                marginTop: 0,
+                                marginBottom: 0,
+                                display: "inline-block",
+                                width: "70%",
+                              }}
+                              onClick={() => {
+                                setOption(null), handleSideBarClick(option);
+                              }}
+                            >
+                              {option?.name}
+                            </Typography>
+                            <MoreVertIcon sx={{ ml: "auto" }} />
+                          </li>
+                        </>
+                      );
+                    })}
+                  </div>
+                </AccordionDetails>
+              </Accordion>
+            </div>
           </>
         );
       })}
+      {/* {<Quiz count={count}/>} */}
     </div>
   );
 }

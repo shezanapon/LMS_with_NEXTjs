@@ -1,5 +1,4 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 import Image from "next/image";
 import pic from "../../public/Furlong Painting Logo.png";
 import SideBar from "../../module 1/SideBar";
@@ -7,15 +6,15 @@ import SideBar from "../../module 1/SideBar";
 import {
   AppBar,
   Box,
-  Button,
   CircularProgress,
   CssBaseline,
   Divider,
   Drawer,
   Hidden,
   Toolbar,
+  Typography,
 } from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import {  useTheme } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import Quiz from "../../module 1/Quiz";
@@ -37,8 +36,7 @@ export default function Main(props) {
     name: "Conditions of Engagement",
     url: "https://docs.google.com/document/d/e/2PACX-1vRlLLQ_cxYPe5ysNkaeJr8EMb-UcN84_RLcL-_3NFzoAp6i9fUxcR-ZBr2ycxISTY4G-inck1-ZZ3J5/pub?embedded=true",
   });
-  const [data, setData] = React.useState(null);
-
+ 
   const container =
     window !== undefined ? () => window().document.body : undefined;
   const [isLoading, setIsLoading] = React.useState(true);
@@ -47,10 +45,6 @@ export default function Main(props) {
     setIsLoading(false);
   };
 
-  const handleOption = (data) => {
-    setOption(data);
-    setData(data.url);
-  };
  
   const sm = useMediaQuery(theme.breakpoints.up("sm"));
   
@@ -70,7 +64,6 @@ export default function Main(props) {
 
           width: sm ? `calc(100% - ${drawerWidth}px)` : "100%" 
 
-         
         }}
       >
         <Toolbar>
@@ -86,17 +79,20 @@ export default function Main(props) {
               
             }}
           >
-            <MenuIcon style={{ color: "white" }} />
+            <MenuIcon style={{ color: "white",width:"50px",height:"50px" }} />
           </IconButton>
 
           <Box
             variant="h6"
-            noWrap
+            
             style={{
               color: "white",
+              paddingLeft:"10px"
             }}
           >
+            <Typography style={{fontSize:"20px"}}>
             Furlong Painting Contractor Induction Program
+            </Typography>
           </Box>
         </Toolbar>
       </AppBar>
@@ -104,7 +100,7 @@ export default function Main(props) {
         
         aria-label="mailbox folders"
       >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        
         <Hidden smUp implementation="css">
           {/* This drawer is for mobile responsive version */}
           <Drawer
@@ -122,7 +118,7 @@ export default function Main(props) {
               <Divider />
               <div />
 
-              <SideBar handleOption={handleOption} />
+              <SideBar setOption={setOption} />
             </div>
           </Drawer>
         </Hidden>
@@ -132,7 +128,7 @@ export default function Main(props) {
               <Image height={59} src={pic} alt="" />
               <Divider />
               <div />
-              <SideBar handleOption={handleOption} />
+              <SideBar setOption={setOption} />
             </div>
           </Drawer>
         </Hidden>
@@ -143,7 +139,7 @@ export default function Main(props) {
             style={{ width: "100%", overflow: "hidden", paddingTop: "56.25%" }}
           >
             {isLoading && (
-              <div>
+              <div style={{padding:"50px 50px 50px 50px"}}>
                 <center>
                   <CircularProgress />
                 </center>
@@ -159,7 +155,7 @@ export default function Main(props) {
                 border: "none",
               }}
               onLoad={handleIframeLoad}
-              frameborder="0"
+              // frameborder="0"
               scrolling="yes"
               src={option?.url}
             ></iframe>
@@ -171,7 +167,7 @@ export default function Main(props) {
             style={{ width: "100%", overflow: "hidden", paddingTop: "56.25%" }}
           >
             {isLoading && (
-              <div>
+              <div style={{padding:"50px 50px 50px 50px"}}>
                 <center>
                   <CircularProgress />
                 </center>
@@ -187,7 +183,7 @@ export default function Main(props) {
                 border: "none",
               }}
               onLoad={handleIframeLoad}
-              frameborder="0"
+              // frameborder="0"
               scrolling="yes"
               src={
                 "https://docs.google.com/document/d/e/2PACX-1vRlLLQ_cxYPe5ysNkaeJr8EMb-UcN84_RLcL-_3NFzoAp6i9fUxcR-ZBr2ycxISTY4G-inck1-ZZ3J5/pub?embedded=true"
