@@ -65,9 +65,11 @@ const resData = [
       },
       {
         name: "QUIZ - Module 1",
+        program:"Furlong Painting Sub Contractor/Worker Induction",
         quiz: {
           totalQuestions: 7,
           perQuestionScore: 1,
+          number:1,
           questions: [
             {
               question:
@@ -198,9 +200,11 @@ const resData = [
       },
       {
         name: "QUIZ - Module 2",
+        program:"Furlong Painting Sub Contractor/Worker Induction",
         quiz: {
           totalQuestions: 7,
           perQuestionScore: 1,
+          number:2,
           questions: [
             {
               question:
@@ -329,9 +333,11 @@ const resData = [
       },
       {
         name: "QUIZ - Module 3",
+        program:"Furlong Painting Sub Contractor/Worker Induction",
         quiz: {
           totalQuestions: 3,
           perQuestionScore: 1,
+          number:3,
           questions: [
             {
               question:
@@ -385,10 +391,12 @@ const resData = [
         url: "https://docs.google.com/document/d/e/2PACX-1vTiLbv0kIbRzX83cyELaVmBk0epjEW-LodWZFmGTtkYx-JkBbZrxL-efSoGgy5ZFsoTbQ3lP5sf5EG1/pub?embedded=true",
       },
       
-      { name: "Acceptance", 
+      { name: "Acceptance",
+        program:"Furlong Painting Sub Contractor/Worker Induction",
         quiz: {
         totalQuestions: 1,
         perQuestionScore: 1,
+        number:4.1,
         questions: [
           {
             question:
@@ -402,9 +410,11 @@ const resData = [
         ]} },
         {
           name: "QUIZ : Module 4",
+          program:"Furlong Painting Sub Contractor/Worker Induction",
           quiz: {
             totalQuestions: 1,
             perQuestionScore: 1,
+            number:4,
             questions: [
               {
                 question:

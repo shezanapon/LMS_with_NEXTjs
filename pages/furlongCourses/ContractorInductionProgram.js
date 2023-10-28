@@ -22,11 +22,13 @@ import Quiz from "../../module 1/Quiz";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import SideBarForContractor from "../../module 1/SideBarForContractor";
 
-const drawerWidth = 280;
+const drawerWidth = 550;
 
-export default function Main(props) {
+export default function ContractorInductionProgram(props) {
   const { window } = props;
-
+  const[secondModule,setSecondModule]=React.useState(false);
+  const[thirdModule,setThirdModule]=React.useState(false);
+  const[fourthModule,setFourthModule]=React.useState(false);
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -38,8 +40,7 @@ export default function Main(props) {
     name: "Conditions of Engagement",
     url: "https://docs.google.com/document/d/e/2PACX-1vRlLLQ_cxYPe5ysNkaeJr8EMb-UcN84_RLcL-_3NFzoAp6i9fUxcR-ZBr2ycxISTY4G-inck1-ZZ3J5/pub?embedded=true",
   });
-  const [data, setData] = React.useState(null);
-
+ 
   const container =
     window !== undefined ? () => window().document.body : undefined;
   const [isLoading, setIsLoading] = React.useState(true);
@@ -48,14 +49,9 @@ export default function Main(props) {
     setIsLoading(false);
   };
 
-  // const handleOption = (data) => {
-  //   setOption(data);
-  //   setData(data.url);
-  // };
- 
   const sm = useMediaQuery(theme.breakpoints.up("sm"));
   
-
+  const [show,setShow]=React.useState(false)
  
   return (
     <div style={{ display: "flex" }}>
@@ -123,17 +119,17 @@ export default function Main(props) {
               <Divider />
               <div />
 
-              <SideBarForContractor setOption={setOption} />
+              <SideBarForContractor setOption={setOption} show={show} setShow={setShow} secondModule={secondModule} thirdModule={thirdModule} fourthModule={fourthModule} />
             </div>
           </Drawer>
         </Hidden>
         <Hidden xsDown implementation="css">
           <Drawer style={{ width: drawerWidth }} variant="permanent" open>
-            <div style={{ width: "280px" }}>
+            <div style={{ width: "550px" }}>
               <Image height={59} src={pic} alt="" />
               <Divider />
               <div />
-              <SideBarForContractor setOption={setOption}/>
+              <SideBarForContractor setOption={setOption} show={show} setShow={setShow} secondModule={secondModule} thirdModule={thirdModule} fourthModule={fourthModule} />
             </div>
           </Drawer>
         </Hidden>
@@ -166,7 +162,7 @@ export default function Main(props) {
             ></iframe>
           </div>
         ) : option?.quiz ? (
-          <Quiz option={option} />
+          <Quiz option={option} setShow={setShow} setSecondModule={setSecondModule} setThirdModule={setThirdModule} setFourthModule={setFourthModule} />
         ) : (
           <div
             style={{ width: "100%", overflow: "hidden", paddingTop: "56.25%" }}

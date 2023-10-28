@@ -12,10 +12,10 @@ import {
   RadioGroup,
   Typography,
 } from "@material-ui/core";
-import SideBar from "./SideBar";
 
-const Quiz = ({ option }) => {
-  
+
+const Quiz = ({ option,setSecondModule,setThirdModule,setFourthModule}) => {
+  console.log("option",option);
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
@@ -25,8 +25,10 @@ const Quiz = ({ option }) => {
     correctAnswers: 0,
     wrongAnswers: 0,
   });
-
+  
+  const [selectedAnswersObject, setSelectedAnswersObject] = useState([]);
   useEffect(() => {
+    setSelectedAnswersObject([])
     const quiz = option?.quiz;
     const { questions } = quiz;
     setActiveQuestion(0);
@@ -57,19 +59,34 @@ const Quiz = ({ option }) => {
   const onAnswerSelected = (answer, index) => {
     setActiveButton(index);
     setSelectedAnswerIndex(index);
-    
 
+    setSelectedAnswersObject((prevAnswers) => {
+      return { ...prevAnswers, [activeQuestion+1]: answer.toString()};
+    });
+    
     if (answer.toString() === questions?.[activeQuestion].correctAnswer) {
       setSelectedAnswer(true);
     } else {
       setSelectedAnswer(false);
     }
   };
-
+  
   const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
+    if(questions.length===7){
+      setSecondModule(true)
+    }
+    if(questions.length===9){
+      setThirdModule(true)
+    }
+    if(questions.length===3){
+      setFourthModule(true)
+    }
+    console.log("juuu",questions.length);
+    const completeObject={selectedAnswers: selectedAnswersObject,quiz:option?.quiz?.number,Name:option?.name,Program:option?.program,correctAnswer:result?.correctAnswers,WrongAnswer:result?.wrongAnswers};
+    console.log("completeObject",completeObject);
     setResultShow(true);
     setResult((prev) =>
       selectedAnswer
@@ -211,12 +228,12 @@ const Quiz = ({ option }) => {
             {questions?.[activeQuestion].question}
           </Typography>
           <ul>
-            {/* {console.log("eeeeeeeeeeee", option)} */}
+            
             {questions?.[activeQuestion].choices?.map((answer, index) => (
-              // data.map(item => Object.values(item))
+              
 
               <>
-                {/* {<SideBar index={index}/>} */}
+                
                 <div key={index}>
                   <FormControl component="fieldset">
                     <RadioGroup
@@ -257,7 +274,8 @@ const Quiz = ({ option }) => {
                 color="secondary"
                 type="submit"
                 disabled={selectedAnswerIndex === null}
-                onClick={handleClickOpen}
+                onClick={()=>handleClickOpen(questions.length)}
+                // onSubmit={selectedAnswers}
               >
                 SUBMIT
               </Button>

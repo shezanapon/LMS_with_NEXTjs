@@ -65,9 +65,11 @@ const ContractorData = [
       },
       {
         name: "QUIZ - Module 1",
+        program:"Furlong Painting Contractor Induction Program",
         quiz: {
           totalQuestions: 7,
           perQuestionScore: 1,
+          number:1,
           questions: [
             {
               question:
@@ -198,9 +200,11 @@ const ContractorData = [
       },
       {
         name: "QUIZ - Module 2",
+        program:"Furlong Painting Contractor Induction Program",
         quiz: {
           totalQuestions: 7,
           perQuestionScore: 1,
+          number:2,
           questions: [
             {
               question:
@@ -329,9 +333,11 @@ const ContractorData = [
       },
       {
         name: "QUIZ - Module 3",
+        program:"Furlong Painting Sub Contractor/Worker Induction",
         quiz: {
           totalQuestions: 3,
           perQuestionScore: 1,
+          number:3,
           questions: [
             {
               question:
@@ -373,7 +379,6 @@ const ContractorData = [
       },
     ],
   }
-  
 ];
 
 export default ContractorData;
