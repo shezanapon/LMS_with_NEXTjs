@@ -9,8 +9,10 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import InfoIcon from '@material-ui/icons/Info';
 
-const SideBarForContractor = ({setOption,show,secondModule,thirdModule,fourthModule}) => {
+const SideBarForContractor = ({setOption,show,secondModule,thirdModule,fourthModule,fifthModule}) => {
   const [color, setColor] = React.useState("Conditions of Engagement");
   const [expanded, setExpanded] = React.useState("Module 1 - Human Resources");
   const handleChange = (panel) => (event, newExpanded) => {
@@ -70,9 +72,8 @@ const SideBarForContractor = ({setOption,show,secondModule,thirdModule,fourthMod
                                color: color === option.name ? "#fff" : "#000",
                              }}
                            >
-                            { ((i<2||((secondModule===true)?(i<3):(i<2)))||(i<2||((thirdModule===true)?(i<4):(i<2)))||(i<2||((fourthModule===true)?(i<5):(i<2))))?<RadioButtonUncheckedIcon/>:<LockOutlinedIcon/>}
-                             
-                             {/* <LockOutlinedIcon/> */}
+                          {(i<1)?<InfoIcon/>: ((i<2||((secondModule===true)?(i<3):(i<2)))||(i<2||((thirdModule===true)?(i<4):(i<2)))||(i<2||((fourthModule===true)?(i<5):(i<2))))
+                            ?((((secondModule===true)&&(i<2))||((thirdModule===true)&&(i<3))||((fourthModule===true)&&(i<4)||((fifthModule===true)&&(i<5))))?<CheckCircleIcon style={{color:"green"}}/>:<RadioButtonUncheckedIcon/>):<LockOutlinedIcon/>}
                              
                              <Typography
                                style={{

@@ -31,7 +31,7 @@ export default function ContractorInductionProgram(props) {
   const[fourthModule,setFourthModule]=React.useState(false);
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const[fifthModule,setFifthModule]=React.useState(false);
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -122,7 +122,7 @@ export default function ContractorInductionProgram(props) {
               <Divider />
               <div />
 
-              <SideBarForContractor setOption={setOption} show={show} setShow={setShow} secondModule={secondModule} thirdModule={thirdModule} fourthModule={fourthModule} />
+              <SideBarForContractor setOption={setOption} show={show} setShow={setShow} secondModule={secondModule} thirdModule={thirdModule} fourthModule={fourthModule} fifthModule={fifthModule}/>
             </div>
           </Drawer>
         </Hidden>
@@ -132,7 +132,7 @@ export default function ContractorInductionProgram(props) {
               <Image height={59} src={pic} alt="" />
               <Divider />
               <div />
-              <SideBarForContractor setOption={setOption} show={show} setShow={setShow} secondModule={secondModule} thirdModule={thirdModule} fourthModule={fourthModule} />
+              <SideBarForContractor setOption={setOption} show={show} setShow={setShow} secondModule={secondModule} thirdModule={thirdModule} fourthModule={fourthModule}fifthModule={fifthModule} />
             </div>
           </Drawer>
         </Hidden>
@@ -165,7 +165,7 @@ export default function ContractorInductionProgram(props) {
             ></iframe>
           </div>
         ) : option?.quiz ? (
-          <Quiz option={option} setShow={setShow} setSecondModule={setSecondModule} setThirdModule={setThirdModule} setFourthModule={setFourthModule} />
+          <Quiz option={option} setShow={setShow} setSecondModule={setSecondModule} setThirdModule={setThirdModule} setFourthModule={setFourthModule}setFifthModule={setFifthModule} />
         ) : (
           <Box style={{ overflow: "hidden", width:"80%",height:"120%",border:"2px solid #106786",padding:"6% 6% 6% 7%",borderRadius:"10px"}}>
           <Box style={{padding:"10px 10px 10px 10px"}}>

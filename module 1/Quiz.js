@@ -14,7 +14,7 @@ import {
 } from "@material-ui/core";
 
 
-const Quiz = ({ option,setSecondModule,setThirdModule,setFourthModule}) => {
+const Quiz = ({ option,setSecondModule,setThirdModule,setFourthModule,setFifthModule}) => {
   console.log("option",option);
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
@@ -83,6 +83,9 @@ const Quiz = ({ option,setSecondModule,setThirdModule,setFourthModule}) => {
     }
     if(questions.length===3){
       setFourthModule(true)
+    }
+    if(questions.length===1){
+      setFifthModule(true)
     }
     console.log("juuu",questions.length);
     const completeObject={selectedAnswers: selectedAnswersObject,quiz:option?.quiz?.number,Name:option?.name,Program:option?.program,correctAnswer:result?.correctAnswers,WrongAnswer:result?.wrongAnswers};
