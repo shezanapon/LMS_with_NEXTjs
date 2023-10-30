@@ -1,8 +1,7 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 import Image from "next/image";
 import pic from "../../public/Furlong Painting Logo.png";
-import SideBar from "../../module 1/SideBar";
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 import {
   AppBar,
@@ -14,6 +13,7 @@ import {
   Drawer,
   Hidden,
   Toolbar,
+  Typography,
 } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
@@ -22,7 +22,7 @@ import Quiz from "../../module 1/Quiz";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import SideBarForContractor from "../../module 1/SideBarForContractor";
 
-const drawerWidth = 550;
+const drawerWidth = 350;
 
 export default function ContractorInductionProgram(props) {
   const { window } = props;
@@ -88,12 +88,15 @@ export default function ContractorInductionProgram(props) {
 
           <Box
             variant="h6"
-           
+            
             style={{
               color: "white",
+              paddingLeft:"10px"
             }}
           >
+            <Typography style={{fontSize:"20px"}}>
             Furlong Painting Contractor Induction Program
+            </Typography>
           </Box>
         </Toolbar>
       </AppBar>
@@ -125,7 +128,7 @@ export default function ContractorInductionProgram(props) {
         </Hidden>
         <Hidden xsDown implementation="css">
           <Drawer style={{ width: drawerWidth }} variant="permanent" open>
-            <div style={{ width: "550px" }}>
+            <div style={{ width: "350px" }}>
               <Image height={59} src={pic} alt="" />
               <Divider />
               <div />
@@ -134,7 +137,7 @@ export default function ContractorInductionProgram(props) {
           </Drawer>
         </Hidden>
       </nav>
-      <main style={{ flexGrow: 1, padding: theme.spacing(3) }}>
+      <main style={{ flexGrow: 1, padding: theme.spacing(12),paddingTop:"18%",paddingLeft:"15%"}}>
         {option?.url ? (
           <div
             style={{ width: "100%", overflow: "hidden", paddingTop: "56.25%" }}
@@ -164,33 +167,18 @@ export default function ContractorInductionProgram(props) {
         ) : option?.quiz ? (
           <Quiz option={option} setShow={setShow} setSecondModule={setSecondModule} setThirdModule={setThirdModule} setFourthModule={setFourthModule} />
         ) : (
-          <div
-            style={{ width: "100%", overflow: "hidden", paddingTop: "56.25%" }}
-          >
-            {isLoading && (
-              <div>
-                <center>
-                  <CircularProgress />
-                </center>
-              </div>
-            )}
-            <iframe
-              style={{
-                position: "absolute",
-                top: 0,
-                bottom: 0,
-                width: "100%",
-                height: "100%",
-                border: "none",
-              }}
-              onLoad={handleIframeLoad}
-              
-              scrolling="yes"
-              src={
-                "https://docs.google.com/document/d/e/2PACX-1vRlLLQ_cxYPe5ysNkaeJr8EMb-UcN84_RLcL-_3NFzoAp6i9fUxcR-ZBr2ycxISTY4G-inck1-ZZ3J5/pub?embedded=true"
-              }
-            ></iframe>
-          </div>
+          <Box style={{ overflow: "hidden", width:"80%",height:"120%",border:"2px solid #106786",padding:"6% 6% 6% 7%",borderRadius:"10px"}}>
+          <Box style={{padding:"10px 10px 10px 10px"}}>
+        <center>
+          <Box style={{border:"2px solid var(--light-other-outlined-border-23-p, rgba(0, 0, 0, 0.23))",borderRadius:"50%",width:"70px",height:"70px"}} >
+            <LockOutlinedIcon style={{fontSize:"37px",marginTop:"15px"}}/></Box>
+          <Typography style={{fontWeight:"bold",fontSize:"20px",paddingBottom:"7px"}}>Please complete previous module</Typography>
+          <Typography style={{fontSize:"17px",color:"#00000099",paddingBottom:"28px"}}>Complete the previous module before starting this one.</Typography>
+          <Button variant="outlined"  style={{borderColor:"#005D7E"}}><Typography style={{color:"#106786"}}>Go To Previous Module</Typography>
+          </Button>
+        </center>
+        </Box>
+      </Box>
         )}
       </main>
     </div>

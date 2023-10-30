@@ -123,7 +123,7 @@ const Quiz = ({ option,setSecondModule,setThirdModule,setFourthModule}) => {
       <Box
         open={open}
         onClose={handleClose}
-        style={{ padding: "150px 100px 0px 150px" }}
+        style={{ padding: "0px 100px 0px 150px" }}
       >
         <Box
           style={{
@@ -205,9 +205,10 @@ const Quiz = ({ option,setSecondModule,setThirdModule,setFourthModule}) => {
   }
 
   return (
-    <div style={{ paddingTop: "100px" }}>
+    <Box >
+      
       <Card variant="outlined" style={{ maxWidth: "1000px" }}>
-        <CardContent>
+        <CardContent style={{ padding:"20px 0px 20px 30px" }}>
           <div>
             <Typography style={{ fontWeight: "bold" }}>
               <span className="active-question-no">
@@ -252,6 +253,7 @@ const Quiz = ({ option,setSecondModule,setThirdModule,setFourthModule}) => {
                       />
                     </RadioGroup>
                   </FormControl>
+
                 </div>
               </>
             ))}
@@ -283,7 +285,8 @@ const Quiz = ({ option,setSecondModule,setThirdModule,setFourthModule}) => {
           </div>
         </CardContent>
       </Card>
-    </div>
+      
+    </Box>
   );
 };
 

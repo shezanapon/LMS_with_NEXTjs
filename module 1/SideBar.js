@@ -23,6 +23,10 @@ export default function SideBar({ setOption,show,secondModule,thirdModule,fourth
       setOption(option)
       setColor(option?.name)
     }
+    else{
+      setOption(null)
+    }
+    
   };
 
 console.log("show",show);
@@ -39,11 +43,9 @@ console.log("show",show);
                 onChange={handleChange(data?.accordion)}
               >
                 <AccordionSummary
-                 
                  expandIcon={<ExpandMoreIcon />} style={{display:"flex",marginBottom:"5px"}}>
-                  <div>
-                    
-                  <Typography style={{ fontWeight: "bold",float:"left" }}>
+                  <div>         
+                  <Typography style={{ fontWeight: "bold",float:"left"}}>
                     {data?.accordion}
                   </Typography>
                   </div>
@@ -56,6 +58,8 @@ console.log("show",show);
                      {data?.children?.map((option, index) => {
                        return (
                          <>
+                         <div style={{display:"flex"}}>
+                         <div style={{width:"93%"}}>
                            <li
                              key={index}
                              className="pointer"
@@ -88,8 +92,13 @@ console.log("show",show);
                              >
                                {option?.name}
                              </Typography>
-                             <MoreVertIcon sx={{ ml: "auto" }} />
+                             
                            </li>
+                           </div>
+                           <div style={{width:"7%"}}>
+                            <MoreVertIcon sx={{ ml: "auto" }} />
+                           </div>
+                           </div>
                          </>
                        );
                      })}

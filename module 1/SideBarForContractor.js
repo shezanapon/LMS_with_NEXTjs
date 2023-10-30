@@ -56,6 +56,8 @@ const SideBarForContractor = ({setOption,show,secondModule,thirdModule,fourthMod
                      {data?.children?.map((option, index) => {
                        return (
                          <>
+                          <div style={{display:"flex"}}>
+                         <div style={{width:"97%"}}>
                            <li
                              key={index}
                              className="pointer"
@@ -88,8 +90,13 @@ const SideBarForContractor = ({setOption,show,secondModule,thirdModule,fourthMod
                              >
                                {option?.name}
                              </Typography>
-                             <MoreVertIcon sx={{ ml: "auto" }} />
+                             
                            </li>
+                           </div>
+                           <div style={{width:"3%"}}>
+                            <MoreVertIcon sx={{ ml: "auto" }} />
+                           </div>
+                           </div>
                          </>
                        );
                      })}

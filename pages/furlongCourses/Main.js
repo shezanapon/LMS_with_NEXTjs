@@ -2,10 +2,11 @@ import * as React from "react";
 import Image from "next/image";
 import pic from "../../public/Furlong Painting Logo.png";
 import SideBar from "../../module 1/SideBar";
-
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import {
   AppBar,
   Box,
+  Button,
   CircularProgress,
   CssBaseline,
   Divider,
@@ -20,7 +21,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Quiz from "../../module 1/Quiz";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-const drawerWidth = 550;
+const drawerWidth = 350;
 
 export default function Main(props) {
   const { window } = props;
@@ -126,7 +127,7 @@ export default function Main(props) {
         </Hidden>
         <Hidden xsDown implementation="css">
           <Drawer style={{ width: drawerWidth }} variant="permanent" open>
-            <div style={{ width: "550px" }}>
+            <div style={{ width: "350px" }}>
               <Image height={59} src={pic} alt="" />
               <Divider />
               <div />
@@ -135,10 +136,11 @@ export default function Main(props) {
           </Drawer>
         </Hidden>
       </nav>
-      <main style={{ flexGrow: 1, padding: theme.spacing(3) }}>
-        {option?.url ? (
+      <main style={{ flexGrow: 1, padding: theme.spacing(12),paddingTop:"18%",paddingLeft:"15%",height:'100%' }}>
+        
+       {option?.url ? (
           <div
-            style={{ width: "100%", overflow: "hidden", paddingTop: "56.25%" }}
+            style={{ width: "100%", overflow: "hidden", paddingTop: "56.25%"}}
           >
             {isLoading && (
               <div style={{padding:"50px 50px 50px 50px"}}>
@@ -153,7 +155,7 @@ export default function Main(props) {
                 top: 0,
                 bottom: 0,
                 width: "100%",
-                height: "100%",
+                height: "150%",
                 border: "none",
               }}
               onLoad={handleIframeLoad}
@@ -164,33 +166,22 @@ export default function Main(props) {
         ) : option?.quiz ? (
           <Quiz option={option} setShow={setShow} setSecondModule={setSecondModule} setThirdModule={setThirdModule} setFourthModule={setFourthModule}/>
         ) : (
-          <div
-            style={{ width: "100%", overflow: "hidden", paddingTop: "56.25%" }}
-          >
-            {isLoading && (
-              <div style={{padding:"50px 50px 50px 50px"}}>
-                <center>
-                  <CircularProgress />
-                </center>
-              </div>
-            )}
-            <iframe
-              style={{
-                position: "absolute",
-                top: 0,
-                bottom: 0,
-                width: "100%",
-                height: "100%",
-                border: "none",
-              }}
-              onLoad={handleIframeLoad}
-              scrolling="yes"
-              src={
-                "https://docs.google.com/document/d/e/2PACX-1vRlLLQ_cxYPe5ysNkaeJr8EMb-UcN84_RLcL-_3NFzoAp6i9fUxcR-ZBr2ycxISTY4G-inck1-ZZ3J5/pub?embedded=true"
-              }
-            ></iframe>
-          </div>
-        )}
+        <Box style={{ overflow: "hidden", width:"60%",height:"120%",border:"2px solid #106786",padding:"6% 6% 6% 6%",borderRadius:"10px" }}>
+          <Box style={{padding:"10px 10px 10px 10px"}}>
+        <center>
+          <Box style={{border:"2px solid var(--light-other-outlined-border-23-p, rgba(0, 0, 0, 0.23))",borderRadius:"50%",width:"70px",height:"70px"}} >
+            <LockOutlinedIcon style={{fontSize:"37px",marginTop:"15px"}}/></Box>
+          <Typography style={{fontWeight:"bold",fontSize:"20px",paddingBottom:"7px"}}>Please complete previous module</Typography>
+          <Typography style={{fontSize:"17px",color:"#00000099",paddingBottom:"28px"}}>Complete the previous module before starting this one.</Typography>
+          <Button variant="outlined"  style={{borderColor:"#005D7E"}}><Typography style={{color:"#106786"}}>Go To Previous Module</Typography>
+          </Button>
+        </center>
+        </Box>
+      </Box>
+      )
+        
+        }
+       
       </main>
     </div>
   );
